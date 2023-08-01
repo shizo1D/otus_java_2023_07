@@ -2,15 +2,18 @@ plugins {
     id("java")
 }
 
+val guava: String by project
+val jupiter: String by project
+val junit: String by project
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.9.1"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("com.google.guava:guava:32.1.1-jre")
+    testImplementation(platform("org.junit:junit-bom:$junit"))
+    testImplementation("org.junit.jupiter:$jupiter")
+    implementation("com.google.guava:guava:$guava")
 }
 
 tasks.test {
